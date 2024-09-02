@@ -7,9 +7,17 @@
         public MainPage()
         {
             InitializeComponent();
+
         }
 
-        
+        private async void OnSwipedLeft(object sender, SwipedEventArgs e)
+        {
+            await Shell.Current.GoToAsync("///VibrationPage");
+        }
+
+
+
+
     }
 
 }

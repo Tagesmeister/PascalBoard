@@ -11,4 +11,10 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <ShellContent ContentTemplate="{DataTemplate local:VibrationPage}"
+                  Route="VibrationPage"/>
+
+    <ShellContent ContentTemplate="{DataTemplate local:BarPage}"
+                  Route="BarPage"/>
+
 </Shell>

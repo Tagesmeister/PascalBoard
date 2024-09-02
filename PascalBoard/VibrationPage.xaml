@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PascalBoard.VibrationPage">
+    
+    
+
+    <Grid RowDefinitions="25*,0*,5*,10*,10*,10*,20*,0*,10*,15*,10*"
+      ColumnDefinitions=".50*, .25*"
+      ColumnSpacing="10"
+      BackgroundColor="Gray">
+
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipedLeft"/>
+            <SwipeGestureRecognizer Direction="Right" Swiped="OnSwipedRight"/>
+        </Grid.GestureRecognizers>
+
+        <!-- Header Section -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" ColumnDefinitions="*, Auto, Auto" RowDefinitions="*, *">
+            <Label Text="PascalBoard" 
+               Grid.Column="0"
+               Grid.Row="0"
+               BackgroundColor="Blue"
+               FontSize="35" />
+            <Label Text="Vibration" Grid.Row="1" BackgroundColor="Green" FontSize="20" Grid.ColumnSpan="1" />
+
+            <Label Text="Darkmode" 
+               Grid.Column="1" 
+               VerticalOptions="Center"
+               HorizontalOptions="End" />
+
+            <Switch IsToggled="false"
+                Grid.Column="2" 
+                VerticalOptions="Center"
+                HorizontalOptions="Start" />
+        </Grid>
+
+        <!-- Content Section -->
+
+        <Label Text="Bar:"
+           Grid.Row="4" 
+           BackgroundColor="Yellow" 
+           FontSize="20"
+           Grid.ColumnSpan="2" />
+
+        <Label Text="Eventcounter:"
+           Grid.Row="5" 
+           BackgroundColor="Pink"
+           FontSize="20"
+           Grid.ColumnSpan="2" />
+
+        <!-- Button Section -->
+        <Grid Grid.Row="6" Grid.ColumnSpan="2" RowDefinitions="Auto, Auto" VerticalOptions="Center">
+            <Label Text="Press the button"
+               HorizontalOptions="Center"
+               BackgroundColor="Azure"
+               FontSize="15" />
+
+            <Button Text="Click Me"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="120"
+                HeightRequest="40" />
+        </Grid>
+
+        <!-- Footer Section -->
+        <Grid Grid.Row="9" Grid.ColumnSpan="2" RowDefinitions="Auto, Auto" >
+            <Label Text="Use two fingers to navigate"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               TextDecorations="Underline" />
+
+            <Label Text="Swipe to the left"
+               Grid.Row="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               TextDecorations="Underline" />
+        </Grid>
+
+        <!-- Navigation Bar -->
+        <Grid Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="DarkGray" Padding="10" RowDefinitions="Auto">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
+                <Button Text="Home"
+                    BackgroundColor="Transparent"
+                    TextColor="White"/>
+                <Button Text="Settings"
+                    
+                    BackgroundColor="Transparent"
+                    TextColor="White"/>
+
+                <Button Text="Profile" 
+                    BackgroundColor="Transparent" 
+                    TextColor="White"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>
