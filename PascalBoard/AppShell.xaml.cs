@@ -9,7 +9,7 @@
 
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(VibrationPage), typeof(VibrationPage));
-            Routing.RegisterRoute(nameof(BarPage), typeof(BarPage));
+            Routing.RegisterRoute(nameof(ShakeClass), typeof(ShakeClass));
 
 
         }

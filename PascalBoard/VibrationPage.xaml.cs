@@ -24,7 +24,7 @@ public partial class VibrationPage : ContentPage
 
     private async void OnSwipedLeft(object sender, SwipedEventArgs e)
     {
-        await Shell.Current.GoToAsync("///BarPage");
+        await Shell.Current.GoToAsync("///ShakeClass");
     }
     private async void OnSwipedRight(object sender, SwipedEventArgs e)
     {

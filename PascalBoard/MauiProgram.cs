@@ -28,7 +28,7 @@ namespace PascalBoard
             // Registered Transmition
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<VibrationPage>();
-            builder.Services.AddTransient<BarPage>();
+            builder.Services.AddTransient<ShakeClass>();
 
 
             return builder.Build();

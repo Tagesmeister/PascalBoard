@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PascalBoard.VibrationPage">
-    
-    
 
-    <Grid RowDefinitions="25*,0*,5*,10*,10*,10*,20*,0*,10*,15*,10*"
+
+
+    <Grid RowDefinitions="15*,0*,5*,0*,10*,10*,20*,0*,10*,15*,8*"
       ColumnDefinitions=".50*, .25*"
       ColumnSpacing="10"
       BackgroundColor="Gray">
@@ -20,9 +20,12 @@
             <Label Text="PascalBoard" 
                Grid.Column="0"
                Grid.Row="0"
-               BackgroundColor="Blue"
-               FontSize="35" />
-            <Label Text="Vibration" Grid.Row="1" BackgroundColor="Green" FontSize="20" Grid.ColumnSpan="1" />
+               FontSize="30" 
+               FontFamily = "monospace"/>
+            <Label Text="Vibration" Grid.Row="1"
+                   FontSize="18"
+                   Grid.ColumnSpan="1"
+                   FontFamily = "monospace"/>
 
             <Label Text="Darkmode" 
                Grid.Column="1" 
@@ -36,26 +39,19 @@
         </Grid>
 
         <!-- Content Section -->
-
-        <Label Text="Bar:"
-           Grid.Row="4" 
-           BackgroundColor="Yellow" 
-           FontSize="20"
-           Grid.ColumnSpan="2" />
-
         <Label x:Name="DisplayCountLabel"
            Text="Eventcounter:"
            Grid.Row="5" 
-           BackgroundColor="Pink"
            FontSize="20"
-           Grid.ColumnSpan="2" />
+           Grid.ColumnSpan="2"
+           FontFamily = "monospace"/>
 
         <!-- Button Section -->
         <Grid Grid.Row="6" Grid.ColumnSpan="2" RowDefinitions="Auto, Auto" VerticalOptions="Center">
             <Label Text="Press the button"
                HorizontalOptions="Center"
-               BackgroundColor="Azure"
-               FontSize="15" />
+               FontSize="15"
+               FontFamily = "monospace"/>
 
             <Button Clicked="ExecuteActionButton_Clicked"
                 x:Name="ExecuteActionButton"
@@ -64,35 +60,38 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 WidthRequest="120"
-                HeightRequest="40" />
+                HeightRequest="40"
+                FontFamily = "monospace"/>
         </Grid>
 
         <!-- Footer Section -->
         <Grid Grid.Row="9" Grid.ColumnSpan="2" RowDefinitions="Auto, Auto" >
-            <Label Text="Use two fingers to navigate"
+            <Label Text="Use one fingers to navigate"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               TextDecorations="Underline" />
+               TextDecorations="Underline"
+               FontFamily = "monospace"/>
 
-            <Label Text="Swipe to the left"
+            <Label Text="Swipe to the left or to the right"
                Grid.Row="1"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               TextDecorations="Underline" />
+               TextDecorations="Underline"
+               FontFamily = "monospace"/>
         </Grid>
 
         <!-- Navigation Bar -->
         <Grid Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="DarkGray" Padding="10" RowDefinitions="Auto">
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
-                <Button Text="Home"
+                <Button Text="Sound"
                     BackgroundColor="Transparent"
                     TextColor="White"/>
-                <Button Text="Settings"
+                <Button Text="Vibration"
                     
-                    BackgroundColor="Transparent"
+                    BackgroundColor="Gray"
                     TextColor="White"/>
 
-                <Button Text="Profile" 
+                <Button Text="Light" 
                     BackgroundColor="Transparent" 
                     TextColor="White"/>
             </StackLayout>
