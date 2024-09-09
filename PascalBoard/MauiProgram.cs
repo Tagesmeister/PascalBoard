@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using PascalBoard.ExternClasses;
+using Plugin.Maui.Audio;
 
 namespace PascalBoard
 {
@@ -20,6 +22,8 @@ namespace PascalBoard
 #endif
             // DataStorage Registered
             builder.Services.AddSingleton<DataStorage>();
+            builder.Services.AddSingleton(AudioManager.Current);
+
 
             // Registered Transmition
             builder.Services.AddTransient<MainPage>();

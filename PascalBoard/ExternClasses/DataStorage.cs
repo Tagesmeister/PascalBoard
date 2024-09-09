@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PascalBoard
+namespace PascalBoard.ExternClasses
 {
     public class DataStorage
     {
@@ -13,12 +13,12 @@ namespace PascalBoard
 
         public void SaveData(int count)
         {
-            Preferences.Set(CountKey, count );
+            Preferences.Set(CountKey, count);
         }
         public int LoadData()
         {
-           return Preferences.Get(CountKey, 0);
+            return Preferences.Get(CountKey, 0);
         }
-        
+
     }
 }

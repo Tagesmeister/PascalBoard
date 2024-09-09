@@ -1,3 +1,5 @@
+using PascalBoard.ExternClasses;
+
 namespace PascalBoard;
 
 public partial class VibrationPage : ContentPage
@@ -32,11 +34,18 @@ public partial class VibrationPage : ContentPage
     {
         _storage.SaveData(_storage.LoadData() + 1);
         UpdateCountLabel();
+
+        StartVibration();
     }
     private void UpdateCountLabel()
     {
 
         DisplayCountLabel.Text = $"EventCounter: {_storage.LoadData()}";
+    }
+    private void StartVibration()
+    {
+        Vibration.Default.Vibrate(TimeSpan.FromSeconds(3));
+
     }
 
 }

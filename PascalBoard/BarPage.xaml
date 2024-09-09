@@ -43,7 +43,8 @@
 
         <!-- Bar display Section -->
         <Grid Grid.Row="6" Grid.ColumnSpan="2" RowDefinitions="Auto, Auto" VerticalOptions="Center">
-            <Label Text="Bar"
+            <Label x:Name="DisplayBarData" 
+                Text="Bar"
                  Grid.Row="1"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
