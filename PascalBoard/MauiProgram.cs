@@ -18,6 +18,14 @@ namespace PascalBoard
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            // DataStorage Registered
+            builder.Services.AddSingleton<DataStorage>();
+
+            // Registered Transmition
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<VibrationPage>();
+            builder.Services.AddTransient<BarPage>();
+
 
             return builder.Build();
         }

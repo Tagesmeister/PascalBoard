@@ -34,7 +34,8 @@
 
         <!-- Content Section -->
 
-        <Label Text="Eventcounter:"
+        <Label x:Name="DisplayCountLabel" 
+            Text="Eventcounter:"
             Grid.Row="5" 
             BackgroundColor="Pink"
             FontSize="20"

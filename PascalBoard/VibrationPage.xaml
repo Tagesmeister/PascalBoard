@@ -43,7 +43,8 @@
            FontSize="20"
            Grid.ColumnSpan="2" />
 
-        <Label Text="Eventcounter:"
+        <Label x:Name="DisplayCountLabel"
+           Text="Eventcounter:"
            Grid.Row="5" 
            BackgroundColor="Pink"
            FontSize="20"
@@ -56,7 +57,9 @@
                BackgroundColor="Azure"
                FontSize="15" />
 
-            <Button Text="Click Me"
+            <Button Clicked="ExecuteActionButton_Clicked"
+                x:Name="ExecuteActionButton"
+                Text="Click Me"
                 Grid.Row="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
