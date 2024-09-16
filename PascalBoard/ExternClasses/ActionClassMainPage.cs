@@ -12,11 +12,16 @@ namespace PascalBoard.ExternClasses
         private IAudioManager audioManager;
         private readonly DataStorage _storage;
 
-
         public ActionClassMainPage(IAudioManager audioManager, DataStorage storage)
         {
             this.audioManager = audioManager;
             _storage = storage;
+        }
+
+        public async void Navigate(string navigationLink)
+        {
+            await Shell.Current.GoToAsync($"///{navigationLink}");
+
         }
 
         public async void PlaySound()

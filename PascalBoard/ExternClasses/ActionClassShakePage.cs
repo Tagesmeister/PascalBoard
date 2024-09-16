@@ -27,7 +27,13 @@ namespace PascalBoard.ExternClasses
             _storage = dataStorage;
         }
 
-        public async void AddEventToAccelerometer()
+        public async void Navigate(string navigationLink)
+        {
+            await Shell.Current.GoToAsync($"///{navigationLink}");
+
+        }
+
+        public void AddEventToAccelerometer()
         {
             Accelerometer.ShakeDetected += Accelerometer_ShakeDetected;
             Accelerometer.Default.Start(SensorSpeed.Game);

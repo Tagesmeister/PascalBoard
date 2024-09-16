@@ -21,14 +21,16 @@ public partial class VibrationPage : ContentPage
 
         UpdateCountLabel();
     }
-    private async void GoToSoundPage(object sender, EventArgs e)
+    private void GoToSoundPage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("///MainPage");
+        _actionClassVibrationPage.Navigate("MainPage");
+
 
     }
-    private async void GoToLightPage(object sender, EventArgs e)
+    private void GoToLightPage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("///ShakePage");
+        _actionClassVibrationPage.Navigate("ShakePage");
+
 
     }
     private void ExecuteActionButton_Clicked(object sender, EventArgs e)

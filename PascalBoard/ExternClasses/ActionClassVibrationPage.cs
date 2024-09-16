@@ -29,5 +29,10 @@ namespace PascalBoard.ExternClasses
         {
             return _storage.LoadData();
         }
+        public async void Navigate(string navigationLink)
+        {
+            await Shell.Current.GoToAsync($"///{navigationLink}");
+
+        }
     }
 }

@@ -23,12 +23,12 @@ public partial class ShakePage : ContentPage
 
     private async void GoToVibrationPage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("///VibrationPage");
+        _actionClassShakePage.Navigate("VibrationPage");
 
     }
     private async void GoToSoundPage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("///MainPage");
+        _actionClassShakePage.Navigate("MainPage");
 
     }
 

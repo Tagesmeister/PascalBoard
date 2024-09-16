@@ -15,15 +15,14 @@ namespace PascalBoard
             UpdateCountLabel();
         }
 
-        private async void GoToVibrationPage(object sender, EventArgs e)
+        private void GoToVibrationPage(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("///VibrationPage");
+             _actionClassMainPage.Navigate("VibrationPage");
 
         }
-        private async void GoToLightPage(object sender, EventArgs e)
+        private void GoToLightPage(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("///ShakePage");
-
+            _actionClassMainPage.Navigate("ShakePage");
         }
         protected override void OnAppearing()
         {
