@@ -69,13 +69,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="ShakeClass.xaml.cs">
-	    <DependentUpon>ShakeClass.xaml</DependentUpon>
+	  <Compile Update="ShakePage.xaml.cs">
+	    <DependentUpon>ShakePage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="ShakeClass.xaml">
+	  <MauiXaml Update="ShakePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="VibrationPage.xaml">

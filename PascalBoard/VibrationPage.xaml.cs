@@ -4,13 +4,13 @@ namespace PascalBoard;
 
 public partial class VibrationPage : ContentPage
 {
-    private readonly DataStorage _storage;
+    private readonly ActionClassVibrationPage _actionClassVibrationPage;
 
-    public VibrationPage(DataStorage dataStorage)
+    public VibrationPage(ActionClassVibrationPage actionClassVibrationPage)
 	{
 		InitializeComponent();
 
-        _storage = dataStorage;
+        _actionClassVibrationPage = actionClassVibrationPage;
 
         UpdateCountLabel();
     }
@@ -21,31 +21,26 @@ public partial class VibrationPage : ContentPage
 
         UpdateCountLabel();
     }
-
-    private async void OnSwipedLeft(object sender, SwipedEventArgs e)
-    {
-        await Shell.Current.GoToAsync("///ShakeClass");
-    }
-    private async void OnSwipedRight(object sender, SwipedEventArgs e)
+    private async void GoToSoundPage(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("///MainPage");
+
+    }
+    private async void GoToLightPage(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("///ShakePage");
+
     }
     private void ExecuteActionButton_Clicked(object sender, EventArgs e)
     {
-        _storage.SaveData(_storage.LoadData() + 1);
+        _actionClassVibrationPage.SaveData(_actionClassVibrationPage.LoadData() + 1);
         UpdateCountLabel();
 
-        StartVibration();
+        _actionClassVibrationPage.StartVibration();
     }
     private void UpdateCountLabel()
     {
 
-        DisplayCountLabel.Text = $"EventCounter: {_storage.LoadData()}";
+        DisplayCountLabel.Text = $"EventCounter: {_actionClassVibrationPage.LoadData()}";
     }
-    private void StartVibration()
-    {
-        Vibration.Default.Vibrate(TimeSpan.FromSeconds(3));
-
-    }
-
 }

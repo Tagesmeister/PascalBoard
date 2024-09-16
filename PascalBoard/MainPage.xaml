@@ -10,7 +10,7 @@
 
 
         <Grid.GestureRecognizers>
-            <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipedLeft"/>
+            <SwipeGestureRecognizer Direction="Left" Swiped="GoToVibrationPage"/>
         </Grid.GestureRecognizers>
 
 
@@ -26,15 +26,7 @@
                    FontSize="18" Grid.ColumnSpan="1" 
                    FontFamily = "monospace"/>
 
-            <Label Text="Darkmode" 
-                   Grid.Column="1" 
-                   VerticalOptions="Center"
-                   HorizontalOptions="End" />
-
-            <Switch IsToggled="false"
-                    Grid.Column="2" 
-                    VerticalOptions="Center"
-                    HorizontalOptions="Start" />
+           
         </Grid>
 
         <!-- Content Section -->
@@ -86,11 +78,12 @@
                     BackgroundColor="Gray" 
             TextColor="White"/>
                 <Button Text="Vibration"
-            
+                        Clicked="GoToVibrationPage"
             BackgroundColor="DarkGray"
             TextColor="White"/>
 
                 <Button Text="Light" 
+                        Clicked="GoToLightPage"
             BackgroundColor="Transparent" 
             TextColor="White"/>
             </StackLayout>

@@ -14,7 +14,7 @@
     <ShellContent ContentTemplate="{DataTemplate local:VibrationPage}"
                   Route="VibrationPage"/>
 
-    <ShellContent ContentTemplate="{DataTemplate local:ShakeClass}"
-                  Route="ShakeClass"/>
+    <ShellContent ContentTemplate="{DataTemplate local:ShakePage}"
+                  Route="ShakePage"/>
 
 </Shell>

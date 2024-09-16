@@ -11,8 +11,8 @@
       BackgroundColor="Gray">
 
         <Grid.GestureRecognizers>
-            <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipedLeft"/>
-            <SwipeGestureRecognizer Direction="Right" Swiped="OnSwipedRight"/>
+            <SwipeGestureRecognizer Direction="Left" Swiped="GoToLightPage"/>
+            <SwipeGestureRecognizer Direction="Right" Swiped="GoToSoundPage"/>
         </Grid.GestureRecognizers>
 
         <!-- Header Section -->
@@ -27,15 +27,6 @@
                    Grid.ColumnSpan="1"
                    FontFamily = "monospace"/>
 
-            <Label Text="Darkmode" 
-               Grid.Column="1" 
-               VerticalOptions="Center"
-               HorizontalOptions="End" />
-
-            <Switch IsToggled="false"
-                Grid.Column="2" 
-                VerticalOptions="Center"
-                HorizontalOptions="Start" />
         </Grid>
 
         <!-- Content Section -->
@@ -84,6 +75,7 @@
         <Grid Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="DarkGray" Padding="10" RowDefinitions="Auto">
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
                 <Button Text="Sound"
+                        Clicked="GoToSoundPage"
                     BackgroundColor="Transparent"
                     TextColor="White"/>
                 <Button Text="Vibration"
@@ -92,6 +84,7 @@
                     TextColor="White"/>
 
                 <Button Text="Light" 
+                        Clicked="GoToLightPage"
                     BackgroundColor="Transparent" 
                     TextColor="White"/>
             </StackLayout>

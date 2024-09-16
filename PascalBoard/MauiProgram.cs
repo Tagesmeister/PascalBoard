@@ -22,13 +22,17 @@ namespace PascalBoard
 #endif
             // DataStorage Registered
             builder.Services.AddSingleton<DataStorage>();
+            builder.Services.AddSingleton<ActionClassMainPage>();
+            builder.Services.AddSingleton<ActionClassVibrationPage>();
+            builder.Services.AddSingleton<ActionClassShakePage>();
+
             builder.Services.AddSingleton(AudioManager.Current);
 
 
             // Registered Transmition
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<VibrationPage>();
-            builder.Services.AddTransient<ShakeClass>();
+            builder.Services.AddTransient<ShakePage>();
 
 
             return builder.Build();

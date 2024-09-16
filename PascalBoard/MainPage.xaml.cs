@@ -5,24 +5,26 @@ namespace PascalBoard
 {
     public partial class MainPage : ContentPage
     {
-        private readonly DataStorage _storage;
-        private IAudioManager audioManager;
+        private readonly ActionClassMainPage _actionClassMainPage;
 
-        public MainPage(DataStorage dataStorage, IAudioManager audioManager)
+        public MainPage(DataStorage dataStorage, ActionClassMainPage actionClassMainPage)
         {
             InitializeComponent();
 
-            _storage = dataStorage;
-            this.audioManager = audioManager;
-
+            _actionClassMainPage = actionClassMainPage;
             UpdateCountLabel();
         }
 
-        private async void OnSwipedLeft(object sender, SwipedEventArgs e)
+        private async void GoToVibrationPage(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("///VibrationPage");
-        }
 
+        }
+        private async void GoToLightPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("///ShakePage");
+
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -31,22 +33,17 @@ namespace PascalBoard
 
         private void ExecuteActionButton_Clicked(object sender, EventArgs e)
         {
-            _storage.SaveData(_storage.LoadData() + 1);
+            _actionClassMainPage.SaveData(_actionClassMainPage.LoadData() + 1);
             UpdateCountLabel();
 
-            PlaySound();
+            _actionClassMainPage.PlaySound();
         }
-        private async void PlaySound()
-        {
-            var player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("VilligerSound.wav"));
-
-            player.Play();
-        }
-
         private void UpdateCountLabel()
         {
-            DisplayCountLabel.Text = $"EventCounter: {_storage.LoadData()}";
+            DisplayCountLabel.Text = $"EventCounter: {_actionClassMainPage.LoadData()}";
         }
+
+
     }
 
 }
