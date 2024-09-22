@@ -7,11 +7,11 @@ public partial class ShakePage : ContentPage
 {
    
     private readonly ActionClassShakePage _actionClassShakePage;
-    public ShakePage(DataStorage dataStorage, ActionClassShakePage actionClassShakeClass)
+    public ShakePage(DataStorage dataStorage, ActionClassShakePage actionClassShakePage)
     {
         InitializeComponent();
 
-        _actionClassShakePage = actionClassShakeClass;
+        _actionClassShakePage = actionClassShakePage;
 
         // Register Events
         _actionClassShakePage.UpdateCountLabelAction = UpdateCountLabel;
@@ -21,12 +21,12 @@ public partial class ShakePage : ContentPage
     }
 
 
-    private async void GoToVibrationPage(object sender, EventArgs e)
+    private void GoToVibrationPage(object sender, EventArgs e)
     {
         _actionClassShakePage.Navigate("VibrationPage");
 
     }
-    private async void GoToSoundPage(object sender, EventArgs e)
+    private void GoToSoundPage(object sender, EventArgs e)
     {
         _actionClassShakePage.Navigate("MainPage");
 
@@ -35,12 +35,31 @@ public partial class ShakePage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+
         UpdateCountLabel();
 
         // Start Accelerometer
         _actionClassShakePage.AddEventToAccelerometer();
     }
-    
+    protected override void OnSizeAllocated(double width, double height)
+    {
+        base.OnSizeAllocated(width, height);
+        if (width > height)
+        {
+            // Querformat
+
+
+
+
+        }
+        else
+        {
+            // Hochformat
+
+
+        }
+    }
+
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
@@ -54,9 +73,10 @@ public partial class ShakePage : ContentPage
     private void UpdateCountLabel()
     {
         DisplayCountLabel.Text = $"EventCounter: {_actionClassShakePage.LoadData()}";
+        
     }
 
-    private async void UpdateIndicatorLabel(string status, Color color )
+    private void UpdateIndicatorLabel(string status, Color color )
     {
         LightIndicator.Text = status;
         LightIndicator.TextColor = color;

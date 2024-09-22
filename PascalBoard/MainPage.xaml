@@ -4,7 +4,7 @@
              x:Class="PascalBoard.MainPage"
              BackgroundColor="Gray">
 
-    <Grid RowDefinitions="15*,0*,5*,0*,10*,10*,20*,0*,10*,15*,8*"
+    <Grid RowDefinitions="Auto,0*,5*,0*,10*,10*,20*,0*,10*,15*, Auto"
           ColumnDefinitions=".50*, .25*"
           BackgroundColor="Gray">
 
@@ -72,7 +72,7 @@
         </Grid>
 
         <!-- Navigation Bar -->
-        <Grid Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="DarkGray" Padding="10" RowDefinitions="Auto">
+        <Grid Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="DarkGray" Padding="0" Margin="10" RowDefinitions="Auto">
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
                 <Button Text="Sound"
                     BackgroundColor="Gray" 
