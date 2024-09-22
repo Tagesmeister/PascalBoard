@@ -41,24 +41,6 @@ public partial class ShakePage : ContentPage
         // Start Accelerometer
         _actionClassShakePage.AddEventToAccelerometer();
     }
-    protected override void OnSizeAllocated(double width, double height)
-    {
-        base.OnSizeAllocated(width, height);
-        if (width > height)
-        {
-            // Querformat
-
-
-
-
-        }
-        else
-        {
-            // Hochformat
-
-
-        }
-    }
 
     protected override void OnDisappearing()
     {
